@@ -23,10 +23,10 @@ jobs:
       - name: Ping Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
           node -e "
           const { createClient } = require('@supabase/supabase-js');
-          const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
+          const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
           supabase.from('ping_test').select('id').limit(1).then(console.log).catch(console.error);
           "
