@@ -1,3 +1,6 @@
+#automation workflow - a ping to Supabase to maintain CI/CD 
+#when system is inactive so free tier doesn't end project
+
 name: Ping Supabase to Prevent Pausing
 
 on:
